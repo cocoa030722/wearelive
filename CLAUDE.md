@@ -41,8 +41,8 @@
 
 ## 스택 (확정 2026-09-29, 개발가이드 4.2절)
 
-- 앱: **Flutter** · 백엔드(API 서버): **Spring Boot** · 가게용 웹·어드민: **React** · DB: **Supabase(Postgres)**
-- 앱과 가게용 웹은 Spring Boot API만 호출한다. DB에 직접 붙지 않는다(Supabase 클라이언트 SDK로 테이블 직접 조회·쓰기 금지).
+- 앱: **Flutter** · 백엔드(API 서버): **Spring Boot** · 가게용 웹·어드민: **React** · DB: **AWS RDS(PostgreSQL)**
+- 앱과 가게용 웹은 Spring Boot API만 호출한다. DB에 직접 붙지 않는다(앱·웹에서 DB 접속 정보·직접 쿼리 금지).
 - 예약·결제·권한 로직은 Spring Boot 서비스 계층 + DB 트랜잭션(행 잠금·제약)에서 처리한다. 2.8절 시나리오 테스트도 백엔드 테스트로 작성.
 - 결제 토스페이먼츠 · 로그인 카카오·구글 · 푸시 FCM
 - 실행·테스트 명령: (채울 것)
